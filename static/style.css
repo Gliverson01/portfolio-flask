@@ -5,6 +5,9 @@ body {
     padding-top: 56px;
 }
 
+header h1 {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+}
 /* Estilos para o header/hero */
 header {
     padding-top: 6rem;

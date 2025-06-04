@@ -1,32 +1,32 @@
 from flask import Flask, render_template
 import os
 
-app = Flask(__name__, 
-           template_folder=os.path.abspath('templates'),
-           static_folder=os.path.abspath('static'))
+app = Flask(__name__,
+            template_folder=os.path.abspath('templates'),
+            static_folder=os.path.abspath('static'))
 
-# Dados de exemplo para os projetos
+# Projetos reais com base no seu currículo
 projetos = [
     {
         'id': 1,
-        'nome': 'Sistema de Gerenciamento de Tarefas',
-        'descricao': 'Aplicação web para gerenciamento de tarefas e projetos com funcionalidades de atribuição, prazos e notificações.',
-        'tecnologias': ['Python', 'Django', 'PostgreSQL', 'Bootstrap', 'JavaScript'],
-        'link': 'https://github.com/exemplo/gerenciador-tarefas'
+        'nome': 'Automação de Rotinas com Ansible e Docker',
+        'descricao': 'Scripts e playbooks criados para automatizar rotinas críticas de servidores, reduzindo em 30% o tempo de execução.',
+        'tecnologias': ['Ansible', 'Docker', 'Python', 'Shell Script'],
+        'link': 'https://github.com/gliversonfrp/infra-automation'  # ajuste conforme seu GitHub real
     },
     {
         'id': 2,
-        'nome': 'E-commerce de Produtos Artesanais',
-        'descricao': 'Plataforma de comércio eletrônico para artesãos venderem seus produtos, com sistema de pagamento integrado e gestão de estoque.',
-        'tecnologias': ['React', 'Node.js', 'MongoDB', 'Stripe API', 'AWS'],
-        'link': 'https://github.com/exemplo/ecommerce-artesanato'
+        'nome': 'Monitoramento com Prometheus e Grafana',
+        'descricao': 'Dashboard de monitoramento implementado em servidores cloud com foco em performance e custo.',
+        'tecnologias': ['Prometheus', 'Grafana', 'Linux', 'AWS'],
+        'link': 'https://github.com/gliversonfrp/server-monitoring'
     },
     {
         'id': 3,
-        'nome': 'Aplicativo de Monitoramento Fitness',
-        'descricao': 'Aplicativo móvel para acompanhamento de atividades físicas, nutrição e metas de saúde, com visualização de dados e relatórios personalizados.',
-        'tecnologias': ['Flutter', 'Firebase', 'Google Fit API', 'Charts.js', 'SQLite'],
-        'link': 'https://github.com/exemplo/fitness-tracker'
+        'nome': 'Provisionamento com Terraform',
+        'descricao': 'Infraestrutura criada como código para ambientes cloud escaláveis, utilizando AWS e DigitalOcean.',
+        'tecnologias': ['Terraform', 'AWS', 'DigitalOcean', 'IaC'],
+        'link': 'https://github.com/gliversonfrp/cloud-provisioning'
     }
 ]
 
