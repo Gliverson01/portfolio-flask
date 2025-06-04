@@ -1,0 +1,89 @@
+/* Estilos personalizados para o portfólio */
+
+/* Ajuste para o navbar fixo */
+body {
+    padding-top: 56px;
+}
+
+/* Estilos para o header/hero */
+header {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+    background: linear-gradient(to right, #0062E6, #33AEFF);
+}
+
+/* Estilos para as seções */
+section {
+    padding: 5rem 0;
+}
+
+/* Estilos para os cards de projetos */
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para badges de tecnologias */
+.badge {
+    font-size: 0.75rem;
+    padding: 0.5em 0.75em;
+    margin-right: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilos para ícones */
+.bi {
+    vertical-align: middle;
+}
+
+/* Estilos para separadores */
+hr {
+    width: 50px;
+    height: 3px;
+    background-color: #0062E6;
+    border: none;
+    margin: 1.5rem auto;
+}
+
+/* Estilos para imagens de perfil */
+.rounded-circle {
+    border: 5px solid #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilos para formulário de contato */
+.form-control:focus {
+    border-color: #0062E6;
+    box-shadow: 0 0 0 0.25rem rgba(0, 98, 230, 0.25);
+}
+
+/* Estilos para links */
+a {
+    color: #0062E6;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #004bb9;
+}
+
+/* Estilos para responsividade em dispositivos móveis */
+@media (max-width: 768px) {
+    header {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+    
+    h1.display-4 {
+        font-size: 2.5rem;
+    }
+    
+    section {
+        padding: 3rem 0;
+    }
+}
