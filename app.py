@@ -1,7 +1,15 @@
 """Flask application for my personal portfolio."""
 
-from flask import Flask, render_template
+from flask import (
+    Flask,
+    render_template,
+    request,
+    redirect,
+    flash,
+    url_for,
+)
 import os
+from datetime import datetime
 
 app = Flask(__name__,
             template_folder=os.path.abspath('templates'),
@@ -32,10 +40,26 @@ projetos = [
     }
 ]
 
-@app.route('/')
+@app.route("/")
 def index():
-    return render_template('index.html', projetos=projetos)
+    current_year = datetime.now().year
+    return render_template("index.html", projetos=projetos, current_year=current_year)
+
+
+@app.route("/contato", methods=["POST"])
+def contato():
+    nome = request.form.get("nome")
+    email = request.form.get("email")
+    assunto = request.form.get("assunto")
+    mensagem = request.form.get("mensagem")
+
+    app.logger.info("Mensagem recebida de %s <%s>: %s", nome, email, assunto)
+
+    flash("Obrigado pelo contato! Responderei em breve.", "success")
+    return redirect(url_for("index"))
 
 # Executa o servidor apenas quando o script for chamado diretamente
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+if __name__ == "__main__":
+    # Executa o servidor apenas quando o script for chamado diretamente
+    port = int(os.getenv("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)

@@ -37,6 +37,19 @@
         </div>
     </nav>
 
+    <div class="container mt-3">
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+                    {{ message }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+
     <!-- Header / Hero Section -->
     <header class="hero text-center mb-5">
         <div class="container">
@@ -178,7 +191,7 @@
                 <div class="col-lg-7">
                     <div class="card">
                         <div class="card-body">
-                            <form>
+                            <form action="{{ url_for('contato') }}" method="post">
                                 <div class="mb-3">
                                     <label for="nome" class="form-label">Nome</label>
                                     <input type="text" class="form-control" id="nome" name="nome" required>
@@ -207,7 +220,7 @@
     <!-- Footer -->
     <footer class="py-4 bg-dark text-white">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+            <p class="mb-0">&copy; {{ current_year }} Meu Portfólio. Todos os direitos reservados.</p>
         </div>
     </footer>
 
