@@ -24,6 +24,8 @@ A aplicação ficará disponível em `http://localhost:5000`.
 
 - `SECRET_KEY`: chave para uso das mensagens *flash*.
 - `PORT`: porta opcional para o servidor.
+- `SMTP_SERVER`, `SMTP_PORT`, `SMTP_USERNAME`, `SMTP_PASSWORD`: configuracoes do servidor SMTP para envio de emails do formulario de contato.
+- `CONTACT_EMAIL`: endereco que recebera as mensagens enviadas pelo formulario (opcional, padrao usa `SMTP_USERNAME`).
 
 ## Estrutura
 
