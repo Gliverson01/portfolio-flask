@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio Profissional</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <!-- Bootstrap 5 CSS via CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -46,14 +49,12 @@
     {% endwith %}
 
     <!-- Header / Hero Section -->
-    <header class="bg-primary text-white text-center py-5 mb-5">
+    <header class="d-flex align-items-center min-vh-100 mb-5">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h1 class="display-4">Especialista em Infraestrutura de TI & DevOps</h1>
-                    <p class="lead">Automatizando operações e otimizando ambientes cloud com segurança e eficiência</p>
-                </div>
-            </div>
+            <p class="text-accent mb-2">Olá, meu nome é</p>
+            <h1 class="display-4 fw-bold">Gliverson Almeida.</h1>
+            <h2 class="h3 text-muted">Eu construo infraestruturas em nuvem.</h2>
+            <p class="mt-4">Automatizando operações e otimizando ambientes cloud com segurança e eficiência.</p>
         </div>
     </header>
 
@@ -101,7 +102,7 @@
     </section>
 
     <!-- Projetos Section -->
-    <section id="projetos" class="py-5 bg-light">
+    <section id="projetos" class="py-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 mx-auto text-center mb-4">
@@ -120,12 +121,12 @@
                             <p class="card-text">{{ projeto.descricao }}</p>
                             <div class="d-flex flex-wrap mb-3">
                                 {% for tech in projeto.tecnologias %}
-                                <span class="badge bg-primary me-1 mb-1">{{ tech }}</span>
+                                <span class="badge bg-accent me-1 mb-1">{{ tech }}</span>
                                 {% endfor %}
                             </div>
                         </div>
                         <div class="card-footer bg-transparent border-top-0">
-                            <a href="{{ projeto.link }}" class="btn btn-outline-primary" target="_blank">
+                            <a href="{{ projeto.link }}" class="btn btn-accent" target="_blank">
                                 <i class="bi bi-github me-1"></i> Ver no GitHub
                             </a>
                         </div>
@@ -154,15 +155,15 @@
                             <h4 class="card-title">Informações de Contato</h4>
                             <ul class="list-unstyled">
                                 <li class="mb-3">
-                                    <i class="bi bi-envelope-fill text-primary me-2"></i>
+                                    <i class="bi bi-envelope-fill text-accent me-2"></i>
                                     <a href="mailto:gliversonfrp@gmail.com">gliversonfrp@gmail.com</a>
                                 </li>
                                 <li class="mb-3">
-                                    <i class="bi bi-telephone-fill text-primary me-2"></i>
+                                    <i class="bi bi-telephone-fill text-accent me-2"></i>
                                     <a href="tel:+5541997161210">(41) 99716-1210</a>
                                 </li>
                                 <li class="mb-3">
-                                    <i class="bi bi-geo-alt-fill text-primary me-2"></i>
+                                    <i class="bi bi-geo-alt-fill text-accent me-2"></i>
                                     Cuitiba, PR - Brasil
                                 </li>
                             </ul>
@@ -170,13 +171,13 @@
                             <h5 class="mt-4">Redes Sociais</h5>
                             <div class="d-flex">
                                 <a href="https://linkedin.com/" target="_blank" class="me-3 fs-4">
-                                    <i class="bi bi-linkedin text-primary"></i>
+                                    <i class="bi bi-linkedin text-accent"></i>
                                 </a>
                                 <a href="https://github.com/" target="_blank" class="me-3 fs-4">
-                                    <i class="bi bi-github text-dark"></i>
+                                    <i class="bi bi-github text-accent"></i>
                                 </a>
                                 <a href="https://twitter.com/" target="_blank" class="me-3 fs-4">
-                                    <i class="bi bi-twitter text-info"></i>
+                                    <i class="bi bi-twitter text-accent"></i>
                                 </a>
                             </div>
                         </div>
@@ -203,7 +204,7 @@
                                     <label for="mensagem" class="form-label">Mensagem</label>
                                     <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
                                 </div>
-                                <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
+                                <button type="submit" class="btn btn-accent">Enviar Mensagem</button>
                             </form>
                         </div>
                     </div>
@@ -213,7 +214,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="py-4 bg-dark text-white">
+    <footer class="py-4">
         <div class="container text-center">
             <p class="mb-0">&copy; {{ current_year }} Meu Portfólio. Todos os direitos reservados.</p>
         </div>
