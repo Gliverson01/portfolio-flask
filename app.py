@@ -1,3 +1,5 @@
+"""Flask application for my personal portfolio."""
+
 from flask import Flask, render_template
 import os
 
@@ -34,5 +36,6 @@ projetos = [
 def index():
     return render_template('index.html', projetos=projetos)
 
+# Executa o servidor apenas quando o script for chamado diretamente
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0')

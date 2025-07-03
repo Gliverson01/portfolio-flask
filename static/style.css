@@ -3,16 +3,29 @@
 /* Ajuste para o navbar fixo */
 body {
     padding-top: 56px;
+    font-family: 'Poppins', sans-serif;
 }
 
 header h1 {
     text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
 }
 /* Estilos para o header/hero */
-header {
-    padding-top: 6rem;
-    padding-bottom: 6rem;
-    background: linear-gradient(to right, #0062E6, #33AEFF);
+.hero {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    background: url('https://images.unsplash.com/photo-1522199710521-72d69614c702?auto=format&fit=crop&w=1350&q=80') center/cover no-repeat;
+    color: #fff;
+}
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+}
+.hero .container {
+    position: relative;
+    z-index: 1;
 }
 
 /* Estilos para as seções */
@@ -77,7 +90,7 @@ a:hover {
 
 /* Estilos para responsividade em dispositivos móveis */
 @media (max-width: 768px) {
-    header {
+    .hero {
         padding-top: 4rem;
         padding-bottom: 4rem;
     }
