@@ -1,9 +1,13 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, redirect, flash, url_for
 import os
+from datetime import datetime
 
-app = Flask(__name__,
-            template_folder=os.path.abspath('templates'),
-            static_folder=os.path.abspath('static'))
+app = Flask(
+    __name__,
+    template_folder=os.path.abspath("templates"),
+    static_folder=os.path.abspath("static"),
+)
+app.config["SECRET_KEY"] = os.getenv("SECRET_KEY", "change-this-secret")
 
 # Projetos reais com base no seu currículo
 projetos = [
@@ -32,7 +36,22 @@ projetos = [
 
 @app.route('/')
 def index():
-    return render_template('index.html', projetos=projetos)
+    current_year = datetime.now().year
+    return render_template("index.html", projetos=projetos, current_year=current_year)
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+
+@app.route("/contato", methods=["POST"])
+def contato():
+    nome = request.form.get("nome")
+    email = request.form.get("email")
+    assunto = request.form.get("assunto")
+    mensagem = request.form.get("mensagem")
+
+    app.logger.info("Mensagem recebida de %s <%s>: %s", nome, email, assunto)
+
+    flash("Obrigado pelo contato! Responderei em breve.", "success")
+    return redirect(url_for("index"))
+
+if __name__ == "__main__":
+    port = int(os.getenv("PORT", 5000))
+    app.run(debug=True, host="0.0.0.0", port=port)
