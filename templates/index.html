@@ -35,6 +35,16 @@
         </div>
     </nav>
 
+    {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+    <div class="container mt-3">
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}" role="alert">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+    {% endwith %}
+
     <!-- Header / Hero Section -->
     <header class="bg-primary text-white text-center py-5 mb-5">
         <div class="container">
@@ -176,22 +186,22 @@
                 <div class="col-lg-7">
                     <div class="card">
                         <div class="card-body">
-                            <form>
+                            <form action="{{ url_for('contato') }}" method="post">
                                 <div class="mb-3">
                                     <label for="nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" id="nome" required>
+                                    <input type="text" class="form-control" id="nome" name="nome" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="email" class="form-label">Email</label>
-                                    <input type="email" class="form-control" id="email" required>
+                                    <input type="email" class="form-control" id="email" name="email" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="assunto" class="form-label">Assunto</label>
-                                    <input type="text" class="form-control" id="assunto" required>
+                                    <input type="text" class="form-control" id="assunto" name="assunto" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="mensagem" class="form-label">Mensagem</label>
-                                    <textarea class="form-control" id="mensagem" rows="4" required></textarea>
+                                    <textarea class="form-control" id="mensagem" name="mensagem" rows="4" required></textarea>
                                 </div>
                                 <button type="submit" class="btn btn-primary">Enviar Mensagem</button>
                             </form>
@@ -205,7 +215,7 @@
     <!-- Footer -->
     <footer class="py-4 bg-dark text-white">
         <div class="container text-center">
-            <p class="mb-0">&copy; 2025 Meu Portfólio. Todos os direitos reservados.</p>
+            <p class="mb-0">&copy; {{ current_year }} Meu Portfólio. Todos os direitos reservados.</p>
         </div>
     </footer>
 
